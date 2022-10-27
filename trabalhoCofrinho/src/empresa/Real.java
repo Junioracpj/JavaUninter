@@ -2,16 +2,16 @@ package empresa;
 
 public class Real extends Moeda {
 	
-	double quant;
-	
-	public void info() {
-		System.out.println("Moeda Euro" + quant);
+//	construtor
+	public Real(double valor) {
+		super(valor);
 	}
-	
-	public void converter() {
-		System.out.println(quant); 
+
+//	metodo de calculo
+	@Override
+	double calculaValor() {
+		double total = valor;
+		return total;
 	}
-	
-
-
 }
+

@@ -2,16 +2,15 @@ package empresa;
 
 public class Dolar extends Moeda {
 	
-	double quant;
-	
-	public void info() {
-		System.out.println("Moeda Dolar" + quant);
+//	construtor
+	public Dolar(double valor) {
+		super(valor);
 	}
-	
-	public void converter() {
-		System.out.println(quant * 5.4); 
+
+//	metodo de calculo
+	@Override
+	double calculaValor() {
+		double total = valor * 5.3;
+		return total;
 	}
-	
-
-
 }

@@ -2,15 +2,15 @@ package empresa;
 
 public class Euro extends Moeda {
 	
-	double quant;
-	
-	public void info() {
-		System.out.println("Moeda Euro" + quant);
+//	construtor
+	public Euro(double valor) {
+		super(valor);
 	}
-	
-	public void converter() {
-		System.out.println(quant * 5.6); 
-	}
-	
 
+//	metodo de calculo
+	@Override
+	double calculaValor() {
+		double total = valor * 5.4;
+		return total;
+	}
 }

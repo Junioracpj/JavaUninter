@@ -1,6 +1,6 @@
 package empresa;
 
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Cofrinho {
 	private double listaMoeda = 0;
@@ -18,7 +18,7 @@ public class Cofrinho {
 //	methods
 	
 	void adcionar(Moeda moeda) {
-		listaMoeda += moeda;
+		listaMoeda = moeda;
 	}
 	
 	void remover(Moeda moeda) {
