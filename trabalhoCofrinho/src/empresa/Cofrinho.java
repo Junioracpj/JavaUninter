@@ -1,37 +1,33 @@
 package empresa;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Cofrinho {
-	private double listaMoeda = 0;
-
-//	construtor vazio
-	public Cofrinho() {
-	}
 	
-//	construtor
-	public Cofrinho(double listaMoeda) {
-		super();
-		this.listaMoeda = listaMoeda;
-	}
+	ArrayList<Moeda> listaMoedas = new ArrayList<Moeda>();
 	
 //	methods
-	
-	void adcionar(Moeda moeda) {
-		listaMoeda = moeda;
+ 	
+	public void adcionar(Moeda c) {
+		listaMoedas.add(c);
 	}
 	
-	void remover(Moeda moeda) {
-		listaMoeda -= moeda;
+	public void remover(Moeda c) {
+		listaMoedas.remove(c);
 	}
 	
-	void listagemMoeda() {
-		Moeda.info();
+	public void listar() {
+		for (Moeda c : listaMoedas) {
+			System.out.println(c);
+		}
 	}
-	
-	void totalConvertido() {
-		Moeda.converter();
-	}
-	
 
-}
+	public void totalConvertido() {
+		double total = 0;
+		for(Moeda c : listaMoedas) {
+			total += c.calculaValor();
+		}
+		System.out.println("Valor total das moedas "
+				+ "convertidas em real :" + total);}
+	}
+

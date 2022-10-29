@@ -10,7 +10,12 @@ public class Euro extends Moeda {
 //	metodo de calculo
 	@Override
 	double calculaValor() {
-		double total = valor * 5.4;
-		return total;
+		return valor * 5.4;
+
+	}
+
+	@Override
+	public String toString() {
+		return "Euro valor=" + valor + ", Valor=" + calculaValor() + "]";
 	}
 }

@@ -10,7 +10,12 @@ public class Dolar extends Moeda {
 //	metodo de calculo
 	@Override
 	double calculaValor() {
-		double total = valor * 5.3;
-		return total;
+		return valor * 5.3;
 	}
+
+	@Override
+	public String toString() {
+		return "Dolar valor=" + valor + ", Valor=" + calculaValor() + "]";
+	}
+
 }

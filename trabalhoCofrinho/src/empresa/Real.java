@@ -10,8 +10,12 @@ public class Real extends Moeda {
 //	metodo de calculo
 	@Override
 	double calculaValor() {
-		double total = valor;
-		return total;
+		return valor;
+	}
+
+	@Override
+	public String toString() {
+		return "Real valor=" + valor + ", Valor=" + calculaValor() + "]";
 	}
 }
 
