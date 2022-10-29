@@ -27,6 +27,7 @@ public class Principal {
 		Scanner teclado = new Scanner(System.in);
 		int opcao;
 		int opcao2;
+		Moeda moeda = null;
 		
 //		Criando lista de moedas 
 		Cofrinho cofre = new Cofrinho();
@@ -40,18 +41,26 @@ public class Principal {
 			case 1: // Adcionar Moedas
 				MenuMoedas();
 				opcao2 = teclado.nextInt();
-				Moeda moeda = null;
-				if(opcao == 1) {
-					moeda = new Real(teclado.nextDouble());	
-				}else if(opcao == 2) {
-					moeda = new Dolar(teclado.nextDouble());
-				}else if(opcao == 3) {
-					moeda = new Euro(teclado.nextDouble());
-				}else {
-					System.out.println("Opcao invalida, tente novamente!!");
-				}
-				cofre.adcionar(moeda);
-				break;
+				while(opcao2!=0) {
+					switch(opcao2) {
+					case 1:
+						moeda = new Real(teclado.nextDouble());	
+						break;
+					case 2:
+						moeda = new Dolar(teclado.nextDouble());
+						break;
+					case 3:
+						moeda = new Euro(teclado.nextDouble());
+						break;
+					case 0:
+						System.out.println("Retornando ao menu principal!!");
+						break;
+					default:
+						System.out.println("Opcao invalida, tente novamente!!");
+					}
+					cofre.adcionar(moeda);
+					opcao2 = 0;
+					}
 			case 2: // Remover Moedas
 //				cofre.remover(teclado.nextInt());
 				break;
@@ -59,6 +68,7 @@ public class Principal {
 				cofre.listar();
 				break;
 			case 4: // Calcular valor total em reais
+				
 				break;
 			default:
 				System.out.println("Opção invalida,tente novamente");
