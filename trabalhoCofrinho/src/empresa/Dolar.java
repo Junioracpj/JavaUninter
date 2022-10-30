@@ -12,17 +12,14 @@ public class Dolar extends Moeda {
 	double calculaValor() {
 		return valor * 5.3;
 	}
-
+	
+//	metodo usado para exibicao dos dados na listagem
 	@Override
 	public String toString() {
-		return "Dolar valor=" + valor + ", Valor=" + calculaValor() + "]";
+		return "Dolar valor=" + valor + ", Valor convertido em real=" + calculaValor();
 	}
 
-	@Override
-	public int hashCode() {
-		return super.hashCode();
-	}
-
+//	metodo usado para comparacao dos dados na exclusao
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

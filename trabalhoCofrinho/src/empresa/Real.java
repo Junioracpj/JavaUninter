@@ -13,16 +13,13 @@ public class Real extends Moeda {
 		return valor;
 	}
 
+//	metodo usado para exibicao dos dados na listagem
 	@Override
 	public String toString() {
-		return "Real valor=" + valor + ", Valor=" + calculaValor() + "]";
+		return "Real valor=" + valor;
 	}
-
-	@Override
-	public int hashCode() {
-		return super.hashCode();
-	}
-
+	
+//	metodo usado para comparação dos dados na exclusão
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

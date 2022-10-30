@@ -1,10 +1,9 @@
 package empresa;
 
-import java.util.Objects;
-
 public abstract class Moeda {
 	double valor;
 	
+//	construtor
 public Moeda(double valor) {
 		super();
 		this.valor = valor;
@@ -12,12 +11,8 @@ public Moeda(double valor) {
 
 //	metodo principal de calculo
 	abstract double calculaValor();
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(valor);
-	}
-
+	
+//	metodo usado para exibicao dos dados na listagem
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

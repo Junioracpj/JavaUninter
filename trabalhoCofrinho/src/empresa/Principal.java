@@ -1,6 +1,4 @@
 package empresa;
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
@@ -17,53 +15,53 @@ public class Principal {
 		System.out.println("Escolha a moeda: ");
 		System.out.println("1 - Real \n"
 				+ "2 - Dolar \n"
-				+ "3 - Euro \n");
+				+ "3 - Euro");
 	}
 	public static void MenuRemover(){
 		System.out.println("Escolha a moeda para remover: ");
 		System.out.println("1 - Real \n"
 				+ "2 - Dolar \n"
-				+ "3 - Euro \n");
+				+ "3 - Euro");
 	}
 	
 //	--------- PROGRAMA PRINCIPAL ---------
 	
 	public static void main(String[] args) {
 
+//		Criando variaveis a serem utilizadas
 		Scanner teclado = new Scanner(System.in);
-		int opcao;
-		int opcao2;
-		int opcao3;
+		int opcao, opcao2, opcao3;
 		Moeda moeda = null;
-		
-//		Criando lista de moedas 
-		Cofrinho cofre = new Cofrinho();
+		Cofrinho cofre = new Cofrinho(); 
 
-		
 		MenuPrincipal();
 		opcao = teclado.nextInt();
-
+		
+//		Iniciando o Loop de execução do programa
 		while (opcao!=0) {
 			switch(opcao) {
 			case 1: // Adcionar Moedas
 				MenuMoedas();
 				opcao2 = teclado.nextInt();
-				while(opcao2!=0) {
+				while(opcao2!=0) { // loop para inserção de dados
 					switch(opcao2) {
 					case 1:
+						System.out.println("Digite o Valor:");
 						moeda = new Real(teclado.nextDouble());	
 						break;
 					case 2:
+						System.out.println("Digite o Valor:");
 						moeda = new Dolar(teclado.nextDouble());
 						break;
 					case 3:
+						System.out.println("Digite o Valor:");
 						moeda = new Euro(teclado.nextDouble());
 						break;
 					case 0:
 						System.out.println("Retornando ao menu principal!!");
 						break;
 					default:
-						System.out.println("Opcao invalida, tente novamente!!");
+						System.out.println("Opção inválida, tente novamente!!");
 					}
 					cofre.adcionar(moeda);
 					opcao2 = 0;
@@ -72,22 +70,25 @@ public class Principal {
 			case 2: // Remover Moedas
 				MenuRemover();
 				opcao3 = teclado.nextInt();
-				while(opcao3!=0) {
+				while(opcao3!=0) { // loop para remoção de dados
 					switch(opcao3) {
 					case 1:
+						System.out.println("Digite o Valor:");
 						moeda = new Real(teclado.nextDouble());	
 						break;
 					case 2:
+						System.out.println("Digite o Valor:");
 						moeda = new Dolar(teclado.nextDouble());
 						break;
 					case 3:
+						System.out.println("Digite o Valor:");
 						moeda = new Euro(teclado.nextDouble());
 						break;
 					case 0:
 						System.out.println("Retornando ao menu principal!!");
 						break;
 					default:
-						System.out.println("Opcao invalida, tente novamente!!");
+						System.out.println("Opção inválida, tente novamente!!");
 					}
 					cofre.remover(moeda);
 					opcao3 = 0;
@@ -105,5 +106,7 @@ public class Principal {
 			MenuPrincipal();
 			opcao = teclado.nextInt();
 		}
+//		Fim do loop de execução do programa
+		System.out.println("Programa encerrado!!");
 }
 }

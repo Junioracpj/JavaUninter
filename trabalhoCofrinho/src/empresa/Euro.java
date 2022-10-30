@@ -11,19 +11,15 @@ public class Euro extends Moeda {
 	@Override
 	double calculaValor() {
 		return valor * 5.4;
-
 	}
 
+//	metodo usado para exibicao dos dados na listagem
 	@Override
 	public String toString() {
-		return "Euro valor=" + valor + ", Valor=" + calculaValor() + "]";
+		return "Euro valor=" + valor + ",Valor convertido em real=" + calculaValor();
 	}
 
-	@Override
-	public int hashCode() {
-		return super.hashCode();
-	}
-
+//	metodo usado para comparação dos dados na exclusão
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
